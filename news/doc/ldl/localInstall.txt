@@ -1,0 +1,36 @@
+
+== jdk ==
+本机默认安装 1.8+
+
+== tomcat ==
+本机默认安装8080端口
+
+== mysql ==
+本机创建yjs数据库，用户名root 密码空
+将mysql/yjs.sql.gz导入yjs数据库
+
+== redis ==
+本机默认安装，不要设置密码
+
+== 友盟推送 ==
+1.查询外网ip，和后台管理员确认添加到友盟后台
+
+== 部署apiSrv ==
+1.将war包直接上传配置为apiServer。
+  或是解压到根目录webapps/apiServer/下
+  
+2.访问http://127.0.0.1:8080/apiServer/users/1/detail
+  返回：{"code": ... 表示： ok
+
+== 客户端测试地址 ==
+http://dev.51efit.com:8080/apiServer/
+
+== 客户端正式地址 ==
+http://apisrv.51efit.com:8080/apiServer/
+
+== 管理后台 ==
+http://dev.51efit.com/admin/
+
+== 开发文档 ==
+重定向到: ../app/design/apiServer接口文档.docx
+

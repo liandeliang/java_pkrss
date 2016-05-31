@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd"> 
+<generatorConfiguration>
+	<properties resource="default.properties"/>  
+	
+	<context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/> 
+        
+		<plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+	      <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
+	      <property name="caseSensitive" value="true"/>
+	    </plugin>
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="${db.url}" userId="${db.user}" password="${db.password}">  
+        </jdbcConnection>
+        
+        <javaModelGenerator targetPackage="com.pkrss.server.domain" targetProject="src/main/java">  
+            <property name="enableSubPackages" value="true"/>  
+            <property name="trimStrings" value="true"/>  
+        </javaModelGenerator>
+        
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources">  
+            <property name="enableSubPackages" value="true"/>  
+        </sqlMapGenerator>  
+        
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.pkrss.server.mapper" targetProject="src/main/java">  
+            <property name="enableSubPackages" value="true"/>  
+        </javaClientGenerator>
+        
+        <!-- all tables
+        <table tableName="%" >
+          <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+		-->
+		  
+		<!-- 
+		<table tableName="pkrss_kv" domainObjectName="KV">
+			<generatedKey column="key" sqlStatement="Mysql" identity="true"/>
+		</table>
+		<table tableName="pkrss_media_l1" domainObjectName="Media">
+			<generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+		</table>
+		<table tableName="pkrss_rsscatalog" domainObjectName="RssCatalog">
+			<generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+		</table>
+		<table tableName="pkrss_rssitem_l1" domainObjectName="RssItem">
+			<generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+		</table>
+		<table tableName="pkrss_rsslocale" domainObjectName="RssLocale">
+			<generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+		</table>
+		<table tableName="pkrss_rsstable" domainObjectName="RssTable">
+			<generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+		</table>
+		<table tableName="pkrss_rsstable_add" domainObjectName="RssTableAdd">
+			<generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+		</table>
+		<table tableName="pkrss_rsstable_mv" domainObjectName="RssTableMv">
+			<generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+		</table>
+		-->
+		<table tableName="pkrss_user" domainObjectName="User">
+			<generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+		</table>
+		
+    </context>  
+</generatorConfiguration> 

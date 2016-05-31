@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+	xmlns:context="http://www.springframework.org/schema/context"    
+	xmlns:mvc="http://www.springframework.org/schema/mvc"    
+	xsi:schemaLocation="http://www.springframework.org/schema/beans   
+		http://www.springframework.org/schema/beans/spring-beans.xsd   
+		http://www.springframework.org/schema/context  
+		http://www.springframework.org/schema/context/spring-context.xsd  
+		http://www.springframework.org/schema/mvc  
+		http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/aop 
+        http://www.springframework.org/schema/aop/spring-aop.xsd">  
+	<!-- 
+  <mvc:annotation-driven>
+    <mvc:message-converters>
+      <ref bean="stringHttpMessageConverter"/>
+      <ref bean="marshallingHttpMessageConverter"/>
+      <ref bean="mappingJackson2HttpMessageConverter"/>
+    </mvc:message-converters>
+  </mvc:annotation-driven>
+	
+	<bean id="stringHttpMessageConverter"
+        class="org.springframework.http.converter.StringHttpMessageConverter"/>
+
+  <bean id="marshallingHttpMessageConverter"
+        class="org.springframework.http.converter.xml.MarshallingHttpMessageConverter">
+    <property name="marshaller" ref="castorMarshaller"/>
+    <property name="unmarshaller" ref="castorMarshaller"/>
+  </bean>
+
+  <bean id="mappingJackson2HttpMessageConverter"
+        class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+    <property name="supportedMediaTypes">
+      <list>
+        <value>application/json</value>
+        <value>application/xml</value>
+        <value>text/html</value>
+        <value>text/plain</value>
+        <value>text/xml</value>
+      </list>
+    </property>
+  </bean> -->
+	
+	<context:component-scan base-package="com.pkrss.server" />
+	
+	<!--  annotation默认的方法映射适配器 -->
+    <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
+    <bean
+		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<bean
+					class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+					<property name="supportedMediaTypes">
+						<list>
+							<value>application/json;charset=UTF-8</value>
+						</list>
+					</property>
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<context:annotation-config/>
+	
+	<mvc:interceptors>
+		<bean class="com.pkrss.server.filter.AuthorityAnnotationInterceptor" />
+	</mvc:interceptors>
+	
+	<mvc:annotation-driven />
+	
+	<!-- <aop:aspectj-autoproxy proxy-target-class="true" /> -->
+
+	<!-- 
+	<bean id="minuteJob_notifyCourseUser" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="userCourseService"/>
+        <property name="targetMethod" value="on_notifyUser"/>
+        <property name="concurrent" value="false"/>
+	</bean>
+	<bean id="bean_CourseLiveCache" class="com.yjs.server.cache.CourseLiveCache">
+	</bean>
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+       <property name="triggers">
+           <list>
+              <ref bean="mintueTrigger_notifyCourseUser"/>
+              <ref bean="dailyTrigger_cleanUnusedLives"/>
+           </list>
+       </property>
+       <property name="autoStartup" value="true"/>
+	</bean>
+     -->
+     
+    <mvc:cors>
+		<mvc:mapping path="/**" allowed-origins="*"
+			allowed-methods="GET, PUT, POST, DELETE"
+			allowed-headers="accept, content-type, x-pkrss-token"
+			exposed-headers="X-PKRSS-Token" allow-credentials="false"
+			max-age="36000" />
+	</mvc:cors>
+</beans>

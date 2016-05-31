@@ -1,0 +1,15 @@
+
+# 1.for generate mybatist mapper
+$ mvn mybatis-generator:generate
+
+# 2. install package
+$ mvn clean install -P devSrv
+
+# 3. deply
+$ mvn tomcat7:redeploy -P devSrv
+
+# 4. test war
+$ rm -rf ~/lian/unrar | mkdir ~/lian/unrar | unzip ~/yjs/svn/ejs_apiSrv/apiServer/target/apiServer.war -d ~/lian/unrar
+
+# last
+/Users/ejianshen/lian/src/j2ee/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps

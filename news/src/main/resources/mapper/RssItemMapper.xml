@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pkrss.server.mapper.RssItemMapper">
+  <resultMap id="BaseResultMap" type="com.pkrss.server.domain.RssItem">
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="tid" jdbcType="INTEGER" property="tid" />
+    <result column="cid" jdbcType="INTEGER" property="cid" />
+    <result column="item_pubdate" jdbcType="TIMESTAMP" property="itemPubdate" />
+    <result column="item_title" jdbcType="VARCHAR" property="itemTitle" />
+    <result column="item_desc" jdbcType="VARCHAR" property="itemDesc" />
+    <result column="item_link" jdbcType="VARCHAR" property="itemLink" />
+    <result column="item_authors" jdbcType="VARCHAR" property="itemAuthors" />
+  </resultMap>
+</mapper>

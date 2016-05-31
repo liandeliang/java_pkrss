@@ -1,0 +1,60 @@
+
+
+spring 3 和mybatis 3集成，并用junit4进行测试: http://www.blogjava.net/justuszhang2009/archive/2011/06/19/352618.html
+
+MyBatis构建sql时动态传入表名以及字段名: http://wendy-wxie.iteye.com/blog/1605193
+
+eclipse+maven3+jUnit4+spring如何测试的同时进行debug: http://blog.csdn.net/achilles12345/article/details/44568885
+
+Mybatis 3.1中 Mapper XML 文件 的学习详解: http://blog.csdn.net/zhll3377/article/details/8203440
+
+教你如何开发Mybatis的通用Mapper: http://my.oschina.net/flags/blog/354573
+
+如何开发自己的通用Mapper: http://git.oschina.net/free/Mapper/tree/master
+
+Mybatis工具类: http://git.oschina.net/free/Mybatis_Utils/tree/master
+
+开源中国 Maven 库使用帮助: http://maven.oschina.net/help.html
+
+MyBatis映射文件的resultMap如何做表关联： http://blog.csdn.net/kkdelta/article/details/7430998
+
+四步完成Spring国际化动态配置: http://www.xdemo.org/spring-i18n/
+
+Spring MVC 中 i18n的使用配置: http://blog.sina.com.cn/s/blog_484d87770101e3tv.html
+
+使用Spring Security和OAuth2实现RESTful服务安全认证： http://www.jdon.com/dl/best/securing-rest-services-with-spring.html.html
+
+Spring MVC 3 REST Demo with Token based security: https://github.com/dhavaln/spring-rest-boilerplate
+
+SpringMVC学习系列（9） 之 实现注解式权限验证： http://www.cnblogs.com/liukemng/p/3751338.html
+
+利用junit对springMVC的Controller进行测试: http://www.tuicool.com/articles/7rMziy 
+
+10个有关RESTful API良好设计的最佳实践: http://www.jdon.com/soa/10-best-practices-for-better-restful-api.html
+
+RESTful 最佳实践： http://my.oschina.net/freegeek/blog/303639#OSC_h4_22
+
+Jenkins+Maven+SVN快速搭建持续集成环境(转): http://www.cnblogs.com/sunzhenchao/archive/2013/01/30/2883289.html
+
+oss图片转换: http://help.aliyun.com/document_detail/oss/oss-img-guide/format/format-conversion.html
+
+Spring+Quartz实现定时任务的配置方法: http://www.oschina.net/question/8676_9032
+
+Quartz在Spring中如何动态配置时间: http://john521.iteye.com/blog/1294149
+
+jQuery在线选座位插件seat-charts：http://down.admin5.com/texiao/116566.html
+
+ngrok 外网内网直通 给微信公众号开发
+
+CORS support in Spring Framework: https://spring.io/blog/2015/06/08/cors-support-in-spring-framework
+
+Adding a Timepicker to jQuery UI Datepicker: http://trentrichardson.com/examples/timepicker/
+
+Druid连接池简单入门配置: http://blog.csdn.net/pk490525/article/details/12621649
+
+Druid基本配置及内置监控使用： http://www.open-open.com/lib/view/open1430558786084.html
+
+Maven 整合 spring profile实现多环境自动切换: http://zilongsky-gmail-com.iteye.com/blog/2032001
+
+利用maven的resources、filter和profile实现不同环境使用不同配置文件: http://zhaoshijie.iteye.com/blog/2094478
+

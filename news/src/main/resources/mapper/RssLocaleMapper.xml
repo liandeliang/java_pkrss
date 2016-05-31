@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pkrss.server.mapper.RssLocaleMapper">
+  <resultMap id="BaseResultMap" type="com.pkrss.server.domain.RssLocale">
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="locale" jdbcType="VARCHAR" property="locale" />
+    <result column="country" jdbcType="VARCHAR" property="country" />
+    <result column="encoding" jdbcType="VARCHAR" property="encoding" />
+    <result column="ucatid" jdbcType="INTEGER" property="ucatid" />
+    <result column="rssstatus" jdbcType="INTEGER" property="rssstatus" />
+    <result column="timezone" jdbcType="VARCHAR" property="timezone" />
+    <result column="en" jdbcType="VARCHAR" property="en" />
+  </resultMap>
+</mapper>

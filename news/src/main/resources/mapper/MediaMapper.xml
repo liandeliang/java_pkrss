@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pkrss.server.mapper.MediaMapper">
+  <resultMap id="BaseResultMap" type="com.pkrss.server.domain.Media">
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="iid" jdbcType="INTEGER" property="iid" />
+    <result column="tid" jdbcType="INTEGER" property="tid" />
+    <result column="cid" jdbcType="INTEGER" property="cid" />
+    <result column="pubdate" jdbcType="TIMESTAMP" property="pubdate" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+  </resultMap>
+</mapper>
