@@ -71,6 +71,15 @@
 	<mvc:annotation-driven />
 	
 	<!-- <aop:aspectj-autoproxy proxy-target-class="true" /> -->
+	
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename">
+            <value>messages</value>
+        </property>
+        <property name="cacheSeconds" value="3600"/>
+        <property name="useCodeAsDefaultMessage" value="true" />
+    </bean>
+     <bean id="localeResolver" class="com.pkrss.server.filter.AcceptHeaderLocaleFilter" />
 
 	<!-- 
 	<bean id="minuteJob_notifyCourseUser" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
