@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
 <div style="display:none">
 	<a href="http://www.pkstate.com" title=" 中国古代文学 " target="_BLANK"> 中国古代文学 </a>
 	<a href="http://news.pkrss.com" title=" Global world news " target="_BLANK"> Global world news </a>
@@ -9,6 +8,6 @@
 	<a href="http://image.pkrss.com" title=" Global world images " target="_BLANK"> Global world images </a>
 </div>
 
-<script type="text/javascript" src="' . APPLICATION_RES_URI . '/js/default/pk.ext.js" async="async"></script>
+<script type="text/javascript" src="<%= request.getContextPath() %>/static/js/common/pk.ext.js" async="async"></script>
 </body>
 </html>

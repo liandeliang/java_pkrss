@@ -26,6 +26,12 @@ public final class HomeController {
     	if(rssLocale != null)
     		lid = rssLocale.getId();
     	
-    	return "redirect:viewMsnry?lid=" + lid;
+    	return "redirect:home/msnry?lid=" + lid;
+    }
+    
+    @RequestMapping(method = { RequestMethod.GET }, value="/msnry")
+    public String msnry(HttpServletRequest request, HttpServletResponse response) {
+		request.setAttribute("seolist", "haha,");
+    	return "home/msnry";
     }
 }
