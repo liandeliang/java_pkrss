@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>pkrss</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="keywords" content="rss,news,global,pkrss" />
+  <link rel="author" href="https://plus.google.com/105064206340342707550/" />
+</head>
+<body>
+	<h1>Global rss news</h1>
+	<h2>version</h2>
+	<a href="home/en" title="version 5 website news">version 5 website news</a>&nbsp;&nbsp;
+	
+	<h2>contract us</h2>
+	<a href="http://news.pkrss.com">news</a>&nbsp;&nbsp;
+	<a href="/s/htm/faq.html">about us</a>&nbsp;&nbsp;
+	<a href="/s/htm/search.html">news search</a>&nbsp;&nbsp;
+	<a href="http://blogs.pkstate.com">blog</a>&nbsp;&nbsp;
+	<a href="http://shop.pkrss.com">shop</a>&nbsp;&nbsp;
+	<a href="http://api.pkstate.com">api</a>&nbsp;&nbsp;
+	<a href="http://culture.pkstate.com" title=" 古文分享网 "> 古文分享网 </a>&nbsp;&nbsp;
+	<a href="mailto:pkrss.com@gmail.com">email</a>&nbsp;&nbsp;
+	
+<script type="text/javascript">
+function requestParam(paras){ 
+  var url = "" + location.href;
+  var paraString = url.substring(url.indexOf("?")+1,url.length).split("&");
+  var j,k;
+  for (var i in paraString){
+    j = paraString[i];
+    k = j.indexOf("=");
+    if(j.substring(0,k).toLowerCase() === paras){
+        return j.substring(k+1,j.length);
+    }
+  }
+  return null;
+}
+
+var uilang = (requestParam("uilang") || navigator.browserLanguage || navigator.language || navigator.userLanguage || 'en');
+uilang = uilang.toLowerCase().replace("-","_");
+
+document.location.replace("home?uilang=" + uilang);
+</script>
+
+</body>
+</html>

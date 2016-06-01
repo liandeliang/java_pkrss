@@ -9,10 +9,10 @@ import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import com.pkrss.server.base.StatusCode;
+import com.pkrss.server.cache.jedis.TokenCache;
 import com.pkrss.server.constant.ServerConstants;
 import com.pkrss.server.http.response.EmptyResponse;
 import com.pkrss.server.secure.PreAuthorize;
-import com.pkrss.server.cache.TokenCache;
 import com.pkrss.server.secure.UserContext;
 import com.pkrss.server.share.ResponseCode;
 import com.pkrss.server.utils.AuthUtil;

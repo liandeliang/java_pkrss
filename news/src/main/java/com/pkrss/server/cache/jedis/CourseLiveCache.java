@@ -1,4 +1,5 @@
-//package com.yjs.server.cache;
+package com.pkrss.server.cache.jedis;
+//package com.pkrss.server.cache;
 //
 //
 //import java.util.Map;

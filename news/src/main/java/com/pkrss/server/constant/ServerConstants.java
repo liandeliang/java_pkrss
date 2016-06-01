@@ -300,4 +300,8 @@ public final class ServerConstants {
          */
         public static final String POSTFIX_SMALLIMAGES = "@120w.src";
     }
+    
+    public static final class Locale{
+    	public static final Integer defaultLid = 1;
+    }
 }

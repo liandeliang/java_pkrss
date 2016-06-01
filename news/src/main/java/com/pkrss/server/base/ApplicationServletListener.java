@@ -38,34 +38,29 @@ public class ApplicationServletListener implements ServletContextListener, Servl
     public void requestDestroyed(ServletRequestEvent arg0) {
     }
 
-    /**
-     * 向session里增加属性时调用(用户成功登陆后会调用)
-     */
     public void attributeAdded(HttpSessionBindingEvent evt) {
 
     }
 
-    /**
-     * 服务器初始化时调用
-     */
     public void contextInitialized(ServletContextEvent evt) {
-        logger.debug("服务器启动");
+        logger.debug("contextInitialized");
         
         ServletContext servletContext = evt.getServletContext();
         
         ctx = WebApplicationContextUtils.getWebApplicationContext(servletContext);
-        // 把ApplicationContext存到静态变量里，以便给没有托管到spring的类提供服务
 
         String webAppsPath = servletContext.getRealPath("/").replace('\\', '/');
         if (!webAppsPath.endsWith("/")) {
             webAppsPath = webAppsPath + "/";
         }
         logger.info("ctx:" + ctx + "ApplicationServletListener=======webAppsPath:" + webAppsPath + "==========");
-        // 为其他普通类提供服务
+        
         WebAppsPathUtil.setWebAppsPath(webAppsPath);
         
-        // 加载服务器配置
         ServerConfig.initProperties(servletContext);
+        
+        com.pkrss.server.service.RssLocaleService rssLocaleServiceImpl = ctx.getBean(com.pkrss.server.service.RssLocaleService.class);
+        rssLocaleServiceImpl.refreshAll();
     }
 
     public void sessionDidActivate(HttpSessionEvent arg0) {
@@ -80,9 +75,6 @@ public class ApplicationServletListener implements ServletContextListener, Servl
     public void attributeRemoved(ServletContextAttributeEvent arg0) {
     }
 
-    /**
-     * session销毁(用户退出系统时会调用)
-     */
     public void sessionDestroyed(HttpSessionEvent evt) {
 
     }
@@ -112,7 +104,7 @@ public class ApplicationServletListener implements ServletContextListener, Servl
     }
 
     public void contextDestroyed(ServletContextEvent evt) {
-        logger.debug("服务器关闭");
+        logger.debug("contextDestroyed");
     }
 
     public void attributeReplaced(ServletRequestAttributeEvent arg0) {

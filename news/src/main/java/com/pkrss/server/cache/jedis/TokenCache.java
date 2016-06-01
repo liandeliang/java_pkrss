@@ -1,4 +1,4 @@
-package com.pkrss.server.cache;
+package com.pkrss.server.cache.jedis;
 
 
 import java.util.Date;
@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * token缓存管理，需要后续对过期token进行删除
  */
-public final class TokenCache extends BaseCache{
+public final class TokenCache extends com.pkrss.server.cache.jedis.NullCache{
     
 
     private static final String CACHE_PREFIX = "sc_";
